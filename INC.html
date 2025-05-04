@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServiceNow</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script src="https://code.angularjs.org/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="formApp" ng-controller="FormController" class="p-4 bg-gray-100">
+  <div class="flex">
+    <!-- Sidebar -->
+
+<div class="w-1/4 bg-gray-200 h-screen p-4">
+  <h2 class="text-lg font-bold mb-4">ServiceNow</h2>
+  <ul class="space-y-2">
+    <li class="hover:bg-gray-300 p-2 rounded" ng-click="toggleIncidentDropdown()">  <h3 class="text-lg font-bold mb-4">Request</h3></li>
+	
+	
+	</ul>
+	 <div ng-show="showIncidentDropdown" class="mt-4 p-2 bg-gray-100">
+    <ul>
+			<li class="hover:bg-gray-300 p-2 rounded">Create New</li>
+			<li class="hover:bg-gray-300 p-2 rounded">My Request</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Raised by Me</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Assigned to My Groups</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Closed Request</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Request Call Back</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Archived Request</li>
+  </div>
+	<ul>
+    <li class="hover:bg-gray-300 p-2 rounded" ng-click="toggleIncidentDropdown()"><h3 class="text-lg font-bold mb-4">Incidents</h3></li>
+		</ul>
+	 <div ng-show="showIncidentDropdown" class="mt-4 p-2 bg-gray-100">
+    <ul>
+			<li class="hover:bg-gray-300 p-2 rounded">Create New</li>
+			<li class="hover:bg-gray-300 p-2 rounded">My Incidents</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Raised by Me</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Assigned to My Groups</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Closed Incidents</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Incident Call Back</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Archived Incidents</li>
+  </div>
+	<ul>
+    <li class="hover:bg-gray-300 p-2 rounded" ng-click="toggleIncidentDropdown()"><h3 class="text-lg font-bold mb-4">MIM</h3></li>
+		</ul>
+	 <div ng-show="showIncidentDropdown" class="mt-4 p-2 bg-gray-100">
+    <ul>
+			<li class="hover:bg-gray-300 p-2 rounded">Create New</li>
+			<li class="hover:bg-gray-300 p-2 rounded">My MIM</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Raised by Me</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Assigned to My Groups</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Closed MIM</li>
+			<li class="hover:bg-gray-300 p-2 rounded">MIM Call Back</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Archived MIM</li>
+  </div>
+	<ul>
+    <li class="hover:bg-gray-300 p-2 rounded" ng-click="toggleIncidentDropdown()"><h4 class="text-lg font-bold mb-4">PRB</h4></li>
+		</ul>
+	 <div ng-show="showIncidentDropdown" class="mt-4 p-2 bg-gray-100">
+    <ul>
+			<li class="hover:bg-gray-300 p-2 rounded">Create New</li>
+			<li class="hover:bg-gray-300 p-2 rounded">My PRB</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Raised by Me</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Assigned to My Groups</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Closed PRB</li>
+			<li class="hover:bg-gray-300 p-2 rounded">PRB Call Back</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Archived PRB</li>
+  </div>
+	<ul>
+    <li class="hover:bg-gray-300 p-2 rounded" ng-click="toggleIncidentDropdown()"><h5 class="text-lg font-bold mb-4">Change</h5></li>
+		</ul>
+	 <div ng-show="showIncidentDropdown" class="mt-4 p-2 bg-gray-100">
+    <ul>
+			<li class="hover:bg-gray-300 p-2 rounded">Create New</li>
+			<li class="hover:bg-gray-300 p-2 rounded">My Change</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Raised by Me</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Assigned to My Groups</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Closed Change</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Change Call Back</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Archived Change</li>
+  </div>
+	<ul>
+    <li class="hover:bg-gray-300 p-2 rounded" ng-click="toggleIncidentDropdown()"><h5 class="text-lg font-bold mb-4">RITM</h5></li>
+		</ul>
+	 <div ng-show="showIncidentDropdown" class="mt-4 p-2 bg-gray-100">
+    <ul>
+			<li class="hover:bg-gray-300 p-2 rounded">Create New</li>
+			<li class="hover:bg-gray-300 p-2 rounded">My RITM</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Raised by Me</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Assigned to My Groups</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Closed RITM</li>
+			<li class="hover:bg-gray-300 p-2 rounded">RITM Call Back</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Archived RITM</li>
+  </div>
+	<ul>
+    <li class="hover:bg-gray-300 p-2 rounded" ng-click="toggleIncidentDropdown()"><h5 class="text-lg font-bold mb-4">SOS</h5></li>
+		</ul>
+	 <div ng-show="showIncidentDropdown" class="mt-4 p-2 bg-gray-100">
+    <ul>
+			<li class="hover:bg-gray-300 p-2 rounded">Create New</li>
+			<li class="hover:bg-gray-300 p-2 rounded">My SOS</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Raised by Me</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Assigned to My Groups</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Closed SOS</li>
+			<li class="hover:bg-gray-300 p-2 rounded">SOS Call Back</li>
+			<li class="hover:bg-gray-300 p-2 rounded">Archived SOS</li>
+  </div>
+  </ul>
+
+  <!-- Dropdown that toggles visibility -->
+  <div ng-show="showIncidentDropdown" class="mt-4 p-2 bg-gray-100">
+    <ul>
+  </div>
+</div>
+
+    <!-- Main Content -->
+    <div class="w-3/4 bg-white rounded-xl shadow-md p-6 ml-4">
+      <!-- Progress Bar -->
+      <div class="flex justify-between mb-6">
+        <div
+          ng-click="toggleColor('open')"
+          class="flex-1 text-center p-2 rounded cursor-pointer"
+          ng-class="{'bg-blue-500 text-white': activeHeader === 'open', 'bg-gray-200': activeHeader !== 'open'}"
+        >
+          Open
+        </div>
+        <div
+          ng-click="toggleColor('inProgress')"
+          class="flex-1 text-center p-2 rounded cursor-pointer"
+          ng-class="{'bg-gray-500 text-white': activeHeader === 'inProgress', 'bg-gray-200': activeHeader !== 'inProgress'}"
+        >
+          In Progress
+        </div>
+        <div
+          ng-click="toggleColor('pending')"
+          class="flex-1 text-center p-2 rounded cursor-pointer"
+          ng-class="{'bg-yellow-500 text-white': activeHeader === 'pending', 'bg-gray-200': activeHeader !== 'pending'}"
+        >
+          Pending
+        </div>
+        <div
+          ng-click="toggleColor('resolved')"
+          class="flex-1 text-center p-2 rounded cursor-pointer"
+          ng-class="{'bg-green-500 text-white': activeHeader === 'resolved', 'bg-gray-200': activeHeader !== 'resolved'}"
+        >
+          Resolved
+        </div>
+        <div
+          ng-click="toggleColor('closed')"
+          class="flex-1 text-center p-2 rounded cursor-pointer"
+          ng-class="{'bg-red-500 text-white': activeHeader === 'closed', 'bg-gray-200': activeHeader !== 'closed'}"
+        >
+          Closed
+        </div>
+      </div>
+	<label class="block text-sm font-medium mt-6">Title <span class="text-red-500">*</span></label>
+      <textarea ng-model="formData.Title" class="w-full border rounded px-3 py-2" rows="1"></textarea>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- First Column -->
+	
+        <div>
+          <label class="block text-sm font-medium">Number</label>
+          <input type="text" ng-model="formData.number" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Template</label>
+          <input type="text" ng-model="formData.template" class="w-full border rounded px-3 py-2">
+
+
+          <label class="block text-sm font-medium mt-4">
+            <input type="checkbox" ng-model="formData.external"> External
+          </label>
+
+          <label class="block text-sm font-medium mt-4">Contact</label>
+          <input type="text" ng-model="formData.contact" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Primary Application</label>
+          <input type="text" ng-model="formData.primaryApplication" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Primary Application Instance</label>
+          <input type="text" ng-model="formData.primaryAppInstance" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Primary CI</label>
+          <input type="text" ng-model="formData.primaryCI" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Symptom</label>
+          <input type="text" ng-model="formData.symptom" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Priority</label>
+          <select ng-model="formData.priority" class="w-full border rounded px-3 py-2">
+            <option>1 - High</option>
+            <option>2 - Medium</option>
+            <option>3 - Low</option>
+          </select>
+        </div>
+
+        <!-- Second Column -->
+        <div>
+          <label class="block text-sm font-medium">Location</label>
+          <input type="text" ng-model="formData.location" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Classification</label>
+          <select ng-model="formData.classification" class="w-full border rounded px-3 py-2">
+            <option>Incident</option>
+			   <option>MIM</option>
+			      <option>Request</option>
+				     <option>Change</option>
+          </select>
+
+          <label class="block text-sm font-medium mt-4">Primary Environment</label>
+          <input type="text" ng-model="formData.primaryEnvironment" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Contact Type</label>
+          <select ng-model="formData.contactType" class="w-full border rounded px-3 py-2">
+            <option>Phone</option>
+			  <option>Email</option>
+			    <option>Chat</option>
+          </select>
+
+          <label class="block text-sm font-medium mt-4">Originating Group <span class="text-red-500">*</span></label>
+          <input type="text" ng-model="formData.originatingGroup" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Assignment Group <span class="text-red-500">*</span></label>
+          <input type="text" ng-model="formData.assignmentGroup" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Assignee</label>
+          <input type="text" ng-model="formData.assignee" class="w-full border rounded px-3 py-2">
+
+          <label class="block text-sm font-medium mt-4">Time Worked</label>
+          <input type="text" ng-model="formData.timeWorked" class="w-full border rounded px-3 py-2">
+        </div>
+      </div>
+
+      <label class="block text-sm font-medium mt-6">Description <span class="text-red-500">*</span></label>
+      <textarea ng-model="formData.description" class="w-full border rounded px-3 py-2" rows="4"></textarea>
+
+      <div class="mt-6 flex justify-end space-x-4">
+        <button class="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded">Withdraw</button>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Save</button>
+      </div>
+	        <!-- Tabs -->
+<div>
+  <!-- Header with Tabs -->
+  <div class="mt-8">
+    <ul class="flex space-x-4 border-b">
+      <li
+        ng-click="setActiveTab('journal')"
+        class="pb-2 cursor-pointer"
+        ng-class="{'border-b-2 border-blue-500': activeTab === 'journal'}"
+      >
+        Journal
+      </li>
+      <li
+        ng-click="setActiveTab('relatedRecords')"
+        class="pb-2 cursor-pointer"
+        ng-class="{'border-b-2 border-blue-500': activeTab === 'relatedRecords'}"
+      >
+        Related Records
+      </li>
+      <li
+        ng-click="setActiveTab('mainframeData')"
+        class="pb-2 cursor-pointer"
+        ng-class="{'border-b-2 border-blue-500': activeTab === 'mainframeData'}"
+      >
+        Mainframe Data
+      </li>
+      <li
+        ng-click="setActiveTab('gasper')"
+        class="pb-2 cursor-pointer"
+        ng-class="{'border-b-2 border-blue-500': activeTab === 'gasper'}"
+      >
+        Gasper
+      </li>
+    </ul>
+  </div>
+
+  <!-- Mid Content Based on Active Tab -->
+  <div class="mt-4">
+    <!-- Journal Content -->
+    <div ng-show="activeTab === 'journal'">
+      <label class="block text-sm font-medium">Watch List</label>
+      <input type="text" ng-model="formData.watchList" class="w-full border rounded px-3 py-2">
+
+      <label class="block text-sm font-medium mt-4">Comments</label>
+      <textarea ng-model="formData.comments" class="w-full border rounded px-3 py-2" rows="3"></textarea>
+
+      <label class="block text-sm font-medium mt-4">Work Notes</label>
+      <textarea ng-model="formData.workNotes" class="w-full border rounded px-3 py-2" rows="3"></textarea>
+    </div>
+
+    <!-- Related Records Content -->
+    <div ng-show="activeTab === 'relatedRecords'">
+      <h3 class="text-lg font-bold">Related Records</h3>
+      <p class="text-sm text-gray-600">Show related incidents, changes, or requests here.</p>
+      <!-- Add more content as needed -->
+	  <div ng-app="formApp" ng-controller="FormController" class="p-4 bg-gray-100">
+  <!-- Container for side-by-side text boxes -->
+  <div class="flex space-x-4 mt-4">
+    <div class="flex-1">
+      <label class="block text-sm font-medium">Text Box 1</label>
+      <input type="text" ng-model="formData.textBox1" class="w-full border rounded px-3 py-2">
+    </div>
+    <div class="flex-1">
+      <label class="block text-sm font-medium">Text Box 2</label>
+      <input type="text" ng-model="formData.textBox2" class="w-full border rounded px-3 py-2">
+    </div>
+    <div class="flex-1">
+      <label class="block text-sm font-medium">Text Box 3</label>
+      <input type="text" ng-model="formData.textBox3" class="w-full border rounded px-3 py-2">
+    </div>
+    <div class="flex-1">
+      <label class="block text-sm font-medium">Text Box 4</label>
+      <input type="text" ng-model="formData.textBox4" class="w-full border rounded px-3 py-2">
+    </div>
+    <div class="flex-1">
+      <label class="block text-sm font-medium">Text Box 5</label>
+      <input type="text" ng-model="formData.textBox5" class="w-full border rounded px-3 py-2">
+    </div>
+    <div class="flex-1">
+      <label class="block text-sm font-medium">Text Box 6</label>
+      <input type="text" ng-model="formData.textBox6" class="w-full border rounded px-3 py-2">
+    </div>
+    <div class="flex-1">
+      <label class="block text-sm font-medium">Text Box 7</label>
+      <input type="text" ng-model="formData.textBox7" class="w-full border rounded px-3 py-2">
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <!-- Mainframe Data Content -->
+    <div ng-show="activeTab === 'mainframeData'">
+      <h3 class="text-lg font-bold">Mainframe Data</h3>
+      <p class="text-sm text-gray-600">Display mainframe-related data here.</p>
+      <!-- Add more content as needed -->
+    </div>
+
+    <!-- Gasper Content -->
+    <div ng-show="activeTab === 'gasper'">
+      <h3 class="text-lg font-bold">Gasper</h3>
+      <p class="text-sm text-gray-600">Provide information from Gasper.</p>
+      <!-- Add more content as needed -->
+    </div>
+  </div>
+</div>
+
+  </div>
+
+
+<script>
+  angular.module('formApp', []).controller('FormController', function ($scope) {
+    // Default active header
+    $scope.activeHeader = 'open';
+
+    // Function to toggle active header
+    $scope.toggleColor = function (header) {
+      $scope.activeHeader = header; // Set the clicked header as active
+    };
+
+    // Default active tab
+    $scope.activeTab = 'journal';
+
+    // Function to set active tab
+    $scope.setActiveTab = function (tabName) {
+      $scope.activeTab = tabName; // Set the active tab
+    };
+
+    // Default value for showing the incident dropdown
+    $scope.showIncidentDropdown = false; // Default is hidden
+
+    // Function to toggle dropdown visibility
+    $scope.toggleIncidentDropdown = function () {
+      $scope.showIncidentDropdown = !$scope.showIncidentDropdown; // Toggle visibility
+    };
+  });
+</script>
+
+
+</body>
+</html>

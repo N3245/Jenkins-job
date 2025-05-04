@@ -1,0 +1,139 @@
+/* styles.css */
+body
+{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    position: relative; /* Needed for positioning the sharp parts */
+    overflow: hidden; /* Hide any overflowing sharp parts */
+}
+
+.header-section {
+    flex: 1;
+    text-align: center;
+    position: relative; /* Needed for positioning the sharp parts */
+}
+
+.header-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block; /* Make the entire section clickable */
+}
+
+/* Sharp parts styles */
+.header-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    /* Adjust these values to control the shape and size */
+    border-width: 20px 20px 0 0; /* Right angle triangle */
+    border-color: #f0f0f0 transparent transparent transparent; /* Match header background */
+    /* Position the triangle */
+    left: -20px; /* Adjust to overlap the previous section */
+    z-index: 1; /* Ensure it's on top */
+}
+
+.header-section:not(:first-child)::before { /* Add triangle to all except the first */
+    display: block;
+}
+
+.header-left::before { /* Remove triangle from the left */
+    display: none;
+}
+
+.header-section:not(:last-child)::after { /* Add triangle after all except the last */
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 0; /* Right angle triangle rotated */
+    border-color: transparent #f0f0f0 transparent transparent; /* Match header background */
+    /* Position the triangle */
+    right: -20px; /* Adjust to overlap the next section */
+    z-index: 1; /* Ensure it's on top */
+}
+
+.header-pending::after { /* Remove triangle from the pending/last section */
+    display: none;
+}
+
+.container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.form-area {
+    display: flex;
+    gap: 20px; /* Space between columns */
+}
+
+.form-column {
+    flex: 1; /* Equal width for each column */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="checkbox"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 100px;
+}
+
+.footer-buttons {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.footer-buttons button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-details {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.footer-details label {
+    display: inline-block;
+    width: 150px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.footer-details input {
+    width: calc(100% - 160px); /* Adjust as needed */
+    display: inline-block;
+}

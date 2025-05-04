@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoSys Workload Automation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eaeaea;
+    }
+    header {
+      background-color: #336699;
+      color: white;
+      padding: 10px 20px;
+    }
+    .tabs {
+      background-color: #f0f0f0;
+      padding: 10px;
+      display: flex;
+      border-bottom: 2px solid #ccc;
+    }
+    .tabs div {
+      margin-right: 20px;
+      padding: 8px 16px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      border-radius: 5px 5px 0 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .main-content {
+      display: flex;
+      margin: 20px;
+      gap: 20px;
+    }
+    .left-panel {
+      flex: 3;
+    }
+    .right-panel {
+      flex: 1;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 20px;
+      height: fit-content;
+    }
+    .filter-panel {
+      background-color: #ffffff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .filter-item {
+      flex: 1;
+      min-width: 180px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    select {
+      width: 100%;
+      padding: 6px;
+    }
+    .buttons {
+      margin-top: 10px;
+    }
+    .buttons button {
+      padding: 6px 12px;
+      margin-right: 10px;
+      border: none;
+      background-color: #336699;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .results-section {
+      margin-bottom: 20px;
+    }
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+    }
+    .results-table th, .results-table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    .details-box {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      row-gap: 10px;
+      column-gap: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .details-box .label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AutoSys Workload Automation</h1>
+  </header>
+  <div class="tabs">
+    <div>Monitoring Console</div>
+    <div>Quick View</div>
+    <div>Quick Edit</div>
+    <div>Job List</div>
+    <div>Job Details</div>
+  </div>
+
+  <div class="main-content">
+    <div class="left-panel">
+      <div class="filter-panel">
+        <div class="filter-row">
+          <div class="filter-item">
+            <label for="server">Server</label>
+            <select id="server">
+              <option>ents-tst-02</option>
+              <option>server-01</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="job-name">Job Name</label>
+            <select id="job-name">
+              <option>CSSRT.000.SelfHelp_Training.BX</option>
+              <option>CSSRT.10.SelfHelp_Training.CJ</option>
+            </select>
+          </div>
+		  <div class="buttons">
+          <button>Go</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="results-section">
+        <div class="results-header">
+          <h2>Search Results</h2>
+          <select>
+            <option>Start</option>
+            <option>Force Start</option>
+            <option>On Hold</option>
+			<option>Off Hold</option>
+			<option>On Ice</option>
+			<option>Off Ice</option>
+			<option>kill</option>
+			<option>Send Event</option>
+          </select>
+		   <div class="buttons">
+          <button>Go</button>
+        </div>
+        </div>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Name</th>
+              <th>Box Name</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Status</th>
+              <th>Run</th>
+              <th>Priority</th>
+              <th>Exit Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td>CSSRT.000.SelfHelp_Training.BX</td>
+              <td>CSSRT.000.SelfHelp_Training.BX</td>
+              <td>Sep 10, 2024 12:00:07 AM</td>
+              <td>Sep 10, 2024 12:01:07 AM</td>
+              <td>✔</td>
+              <td>1164947</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="serviceManagementApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Management</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+ <div class="header">
+        <div class="header-section header-left">
+            <a href="#" class="header-link">Open</a>
+        </div>
+        <div class="header-section header-middle">
+            <a href="#" class="header-link">In Progress</a>
+        </div>
+        <div class="header-section header-right">
+            <a href="#" class="header-link">Pending</a>
+        </div>
+        <div class="header-section header-pending">
+            <a href="#" class="header-link">Resolved</a>
+        </div>
+    </div>
+
+    <div class="container" ng-controller="ServiceController">
+        </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+
+    <div class="container" ng-controller="ServiceController">
+        </div>
+
+    <div class="container" ng-controller="ServiceController">
+        <div class="form-area">
+            <div class="form-column">
+                <label for="number">Number:</label>
+                <input type="text" id="number" ng-model="formData.number">
+
+                <label for="template">Template:</label>
+                <input type="text" id="template" ng-model="formData.template">
+
+                <label for="external">External:</label>
+                <input type="checkbox" id="external" ng-model="formData.external">
+
+                <label for="caller">Caller:</label>
+                <input type="text" id="caller" ng-model="formData.caller">
+
+                <label for="primaryApplication">Primary Application:</label>
+                <input type="text" id="primaryApplication" ng-model="formData.primaryApplication">
+
+                <label for="primaryApplicationInstance">Primary Application Instance:</label>
+                <input type="text" id="primaryApplicationInstance" ng-model="formData.primaryApplicationInstance">
+
+                <label for="primaryCI">Primary CI:</label>
+                <input type="text" id="primaryCI" ng-model="formData.primaryCI">
+
+                <label for="symptom">Symptom:</label>
+                <input type="text" id="symptom" ng-model="formData.symptom">
+
+                <label for="priority">Priority:</label>
+                <select id="priority" ng-model="formData.priority">
+                    <option value="1">1 - High</option>
+                    <option value="2">2 - Medium</option>
+                    <option value="3">3 - Low</option>
+                </select>
+
+                <label for="description">Description:</label>
+                <textarea id="description" ng-model="formData.description"></textarea>
+            </div>
+            <div class="form-column">
+                <label for="lastIncident">Last Incident:</label>
+                <input type="text" id="lastIncident" ng-model="formData.lastIncident">
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" ng-model="formData.location">
+
+                <label for="classification">Classification:</label>
+                <select id="classification" ng-model="formData.classification">
+                    <option value="incident">Incident</option>
+                    <option value="problem">Problem</option>
+                    <option value="change">Change</option>
+                </select>
+
+                <label for="primaryEnvironment">Primary Environment:</label>
+                <input type="text" id="primaryEnvironment" ng-model="formData.primaryEnvironment">
+
+                <label for="contactType">Contact Type:</label>
+                <select id="contactType" ng-model="formData.contactType">
+                    <option value="phone">Phone</option>
+                    <option value="email">Email</option>
+                    <option value="chat">Chat</option>
+                </select>
+
+                <label for="originatingGroup">Originating Group:</label>
+                <input type="text" id="originatingGroup" ng-model="formData.originatingGroup">
+
+                <label for="assignmentGroup">Assignment Group:</label>
+                <input type="text" id="assignmentGroup" ng-model="formData.assignmentGroup">
+
+                <label for="assignee">Assignee:</label>
+                <input type="text" id="assignee" ng-model="formData.assignee">
+
+                <label for="timeWorked">Time Worked:</label>
+                <input type="checkbox" id="timeWorked" ng-model="formData.timeWorked">
+            </div>
+        </div>
+
+        <div class="footer-buttons">
+            <button ng-click="save()">Save</button>
+            <button ng-click="cancel()">Cancel</button>
+        </div>
+
+        <div class="footer-details">
+            <label for="journal">Journal:</label>
+            <input type="text" id="journal">
+            <label for="updatedRecords">Updated Records:</label>
+            <input type="text" id="updatedRecords">
+            <label for="multiSiteData">Multi-Site Data:</label>
+            <input type="text" id="multiSiteData">
+            <label for="watchList">Watch List:</label>
+            <input type="text" id="watchList">
+            <label for="comments">Comments:</label>
+            <input type="text" id="comments">
+            <label for="workNotesList">Work Notes List:</label>
+            <input type="text" id="workNotesList">
+            <label for="workNotes">Work Notes:</label>
+            <input type="text" id="workNotes">
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

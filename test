@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Template</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script src="https://code.angularjs.org/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="formApp" ng-controller="FormController" class="p-4 bg-gray-100">
+<div>
+  <!-- Header with Tabs -->
+  <div class="mt-8">
+    <ul class="flex space-x-4 border-b">
+      <li
+        ng-click="setActiveTab('journal')"
+        class="pb-2 cursor-pointer"
+        ng-class="{'border-b-2 border-blue-500': activeTab === 'journal'}"
+      >
+        Journal
+      </li>
+      <li
+        ng-click="setActiveTab('relatedRecords')"
+        class="pb-2 cursor-pointer"
+        ng-class="{'border-b-2 border-blue-500': activeTab === 'relatedRecords'}"
+      >
+        Related Records
+      </li>
+      <li
+        ng-click="setActiveTab('mainframeData')"
+        class="pb-2 cursor-pointer"
+        ng-class="{'border-b-2 border-blue-500': activeTab === 'mainframeData'}"
+      >
+        Mainframe Data
+      </li>
+      <li
+        ng-click="setActiveTab('gasper')"
+        class="pb-2 cursor-pointer"
+        ng-class="{'border-b-2 border-blue-500': activeTab === 'gasper'}"
+      >
+        Gasper
+      </li>
+    </ul>
+  </div>
+
+  <!-- Mid Content Based on Active Tab -->
+  <div class="mt-4">
+    <!-- Journal Content -->
+    <div ng-show="activeTab === 'journal'">
+      <label class="block text-sm font-medium">Watch List</label>
+      <input type="text" ng-model="formData.watchList" class="w-full border rounded px-3 py-2">
+
+      <label class="block text-sm font-medium mt-4">Comments</label>
+      <textarea ng-model="formData.comments" class="w-full border rounded px-3 py-2" rows="3"></textarea>
+
+      <label class="block text-sm font-medium mt-4">Work Notes</label>
+      <textarea ng-model="formData.workNotes" class="w-full border rounded px-3 py-2" rows="3"></textarea>
+    </div>
+
+    <!-- Related Records Content -->
+    <div ng-show="activeTab === 'relatedRecords'">
+      <h3 class="text-lg font-bold">Related Records</h3>
+      <p class="text-sm text-gray-600">Show related incidents, changes, or requests here.</p>
+      <!-- Add more content as needed -->
+    </div>
+
+    <!-- Mainframe Data Content -->
+    <div ng-show="activeTab === 'mainframeData'">
+      <h3 class="text-lg font-bold">Mainframe Data</h3>
+      <p class="text-sm text-gray-600">Display mainframe-related data here.</p>
+      <!-- Add more content as needed -->
+    </div>
+
+    <!-- Gasper Content -->
+    <div ng-show="activeTab === 'gasper'">
+      <h3 class="text-lg font-bold">Gasper</h3>
+      <p class="text-sm text-gray-600">Provide information from Gasper.</p>
+      <!-- Add more content as needed -->
+    </div>
+  </div>
+</div>
+<script>
+angular.module('formApp', []).controller('FormController', function ($scope) {
+  $scope.activeTab = 'journal'; // Default active tab
+
+  $scope.setActiveTab = function (tabName) {
+    $scope.activeTab = tabName; // Set the active tab
+  };
+});
+</script>
+</body>
+</head>
+</html>
