@@ -1,0 +1,165 @@
+24*7 -- 4 shifts -- apac(5:30-2:30)-[SOD +  BAU]/ emea(2:11){BAU}/nam(6 to 2:30 or 3)[BAU+EOD]/genral - 10 -7(BAU-->evnt-->EOD(monthly, weekly, yearly-->backups)-->user relates , application issues --> in service now)
++ 
+OS UNIX : linux rel 8 & rel7 --> to check the logs --> application preformance --> (df -h , ls -lrt, top, du -sh, pwd,cd ,cat,free, tail,ps -ef | grep process name, find , vi (G,gg,$,0,x,dd,set nu, esc, %s/oldvalue/newvalue/g,w,q,wq,q!),ifconfig,sudo su -.,su,ssh,scp filename1,filename2 username@remotehostname:destination_path,hostname, history,sftp username@remotehostname gep put maget, diff, wc,sdiff,locate,netstat,ping,id,nsloockup,exit)
+
+
+
+agile --> sprint --> scrum master--> 2weeks-->weekly
+ITIL & ITSM 
+
+ITSM (Information technology service management) is a methodology for delivering IT to the business, ITIL (Information technology infrastructure library) is a commonly used set of practices that outlines how to implement ITSM in a company.
+Ticketing tolls:
+1.	ServiceNow: user relates , application 
+2.	Jira: Sprint   related activites
+
+OCR --> gensys-->timewarnar-->
+user -- access releted 
+data types issue 
+
+Your instance URL:https://dev320936.service-now.com 
+
+Username: admin
+Current password: JJ7k1@gOt%Wd
+
+
+           tickets
+		     |
+			 V
+email --> tools& alerts(data dog(application), grafana(aplication), appdynamics(banking live tranctions), autosys(job sheduler))-->servicenow from users & app teams
+            |
+			V
+validation-- related to our teams or not 
+yes--> assgine to us --> re assgine back to requester with comments ; 
+
+serviceNow
+     |---REQ----(privideing the data to requester)--open--
+	 |---INC----(brakeing the BAU)
+	 |---PRB----(repited issues) -- jira
+	 |---MIM----(EMER)sev-
+	 |---CHG----()--startnded -->noramal &planed change-->expideted -->emer chg
+	 |---RITM---
+	 
+
+	•	Register and update your resume daily on:
+	•	Naukri (most important for Hyderabad)
+	•	LinkedIn
+	•	Indeed
+	•	Shine
+	•	Monster India
+	•	Apply to 20–30 relevant jobs every day.
+	•	Set up job alerts on all platforms for keywords: “L2 Production Support”, “Linux Support”, “Application Support”, “Operations Engineer”, “Site Reliability Engineer (Junior)”.
+
+⸻
+
+LinkedIn – Aggressive Networking (Day 1–10)
+	•	Update your LinkedIn profile to reflect L2 Production goals.
+	•	Search and DM recruiters in Hyderabad: Use filters like:
+	•	Location: Hyderabad
+	•	Keywords: “L2 Support”, “Production Support”, “Hiring”
+	•	Example message:
+“Hi [Name], I’m actively looking for L2 Production Support roles in Hyderabad. I have experience in [brief skills], and I’m available to join immediately. Please let me know if there are any openings in your team or network.”
+	•	Comment on recent job posts with “Interested” and DM recruiters right away.
+ Be Interview-Ready (Daily)
+	•	Review:
+	•	Linux admin basics
+	•	Production support scenarios (log analysis, system reboots, cronjob failures)
+	•	Monitoring and ticketing tools
+	•	Behavioral questions
+	•	Practice mock interviews or use platforms like InterviewBuddy, Pramp, or even friends.
+1. Tell me about your experience in L2 Production Support.
+
+Answer:
+
+I’ve been working in L2 Production Support, focusing on Linux environments, system monitoring, incident resolution, and user support. I handle escalation from L1, work on server issues, perform root cause analysis, manage scheduled tasks via cronjobs, and monitor services using tools like Nagios/Zabbix. I’ve also worked with ticketing tools like JIRA/ServiceNow, and I’m comfortable writing shell scripts for automation or log parsing. I aim to ensure minimal downtime and proactive issue resolution.
+
+⸻
+
+2. How do you handle a high-priority (P1) incident in production?
+
+Answer:
+
+When a P1 incident occurs, I first acknowledge the alert and inform stakeholders via the designated channel (email/bridge call). I quickly gather logs and check system health (CPU, memory, disk, service status). If needed, I escalate to L3 or the application team. I keep communication clear and frequent, update the ticket with progress, and ensure a workaround or fix is applied. After resolution, I document steps and contribute to the RCA report.
+
+⸻
+
+3. How do you troubleshoot a Linux server that’s suddenly gone unresponsive?
+
+Answer:
+
+First, I try accessing the server via SSH or console. If it’s unreachable, I check network connectivity (ping, traceroute). If the server is reachable but slow, I review system performance: top, vmstat, iostat, and disk usage. I check logs (/var/log/messages, application logs) to identify the root cause. If needed, I restart services or escalate to infrastructure/network teams.
+
+⸻
+
+4. What steps do you take if a cron job fails?
+
+Answer:
+
+I’d start by checking the cron logs (/var/log/cron) and the user’s crontab. Then I verify the script or command path and its permissions. I’d manually run the script to check for runtime errors, confirm required environment variables, and review any output/error logs. Once fixed, I’d test the cronjob with a near-future schedule and monitor the next run.
+
+
+cron tab
+
+crontab -e
+
+shedule time script # coment
+MIN  HOUR  DOM  MON  DOW
+MIN = Minute (0 - 59)
+
+HOUR = Hour (0 - 23)
+
+DOM = Day of Month (1 - 31)
+
+MON = Month (1 - 12)
+
+DOW = Day of Week (0 - 7) (Sunday = 0 or 7)
+5 * * * * /usr/local/oprations/bin/mov.sh
+sudo su - 
+
+
+⸻
+
+5. How do you manage incidents and changes in ITIL-based environments?
+
+Answer:
+
+I follow ITIL processes for incident, problem, and change management. For incidents, I log and categorize them, work within SLA timelines, and provide RCA if required. For change requests, I ensure they’re documented, reviewed, approved via CAB, and executed during the change window with a rollback plan in place. I update all tickets with clear documentation for audit/compliance.
+
+⸻
+
+6. How do you monitor your production systems and what tools have you used?
+
+Answer:
+
+I’ve used tools like Nagios, Zabbix, and CloudWatch for system health, disk usage, service status, and custom application metrics. I configure alerts for thresholds and use escalation rules for critical failures. I also write shell scripts to monitor specific application components not covered by default tools.
+
+⸻
+
+7. How do you handle user-reported issues in production?
+
+Answer:
+
+I respond by gathering all necessary info: user ID, exact issue, screenshots/logs if possible. I reproduce the issue if applicable, check related logs and system stats, and resolve it or escalate if it requires application/database changes. I keep the user informed throughout and document the resolution clearly in the ticket.
+
+⸻
+
+8. Can you explain a challenging issue you resolved in production?
+
+Answer (example):
+
+We once had a critical issue where a batch job was failing silently at midnight. I checked cron logs and found it triggered correctly. On further investigation, I discovered the script was failing due to a missing environment variable set only in interactive shells. I added proper environment loading in the script itself, and the issue was resolved. I documented the fix and updated team scripts to avoid recurrence.
+
+⸻
+
+9. How do you ensure knowledge sharing in your support team?
+
+Answer:
+
+I document all resolved issues in a shared knowledge base (Confluence/Wiki). For complex or recurring incidents, I create detailed runbooks or SOPs. I also conduct informal knowledge transfer sessions and encourage the team to log learnings from every P1/P2 incident.
+
+⸻
+
+10. Are you comfortable with on-call rotations and working in shifts?
+
+Answer:
+
+Yes, I’ve been part of a 24x7 on-call rotation and am comfortable working in shifts. I understand production support needs high availability and quick response times, and I plan accordingly to ensure smooth handovers and minimal disruption.
