@@ -29,7 +29,7 @@ VALUES
 ('Jane', 'Smith', 'jane.smith@bank.com', '555-0002', '2021-06-10', 'Database Administrator', 'IT', 85000.00, 1, 'Active', '1988-07-15', '456 Oak Ave', 'New York', 'NY', '10002', 'USA'),
 ('Michael', 'Johnson', 'michael.johnson@bank.com', '555-0003', '2019-11-05', 'Manager', 'HR', 80000.00, NULL, 'Active', '1980-09-12', '789 Pine Rd', 'Boston', 'MA', '02101', 'USA');
 
--- Create bankcustomers table (MySQL-compatible)
+---- Create bankcustomers table (MySQL-compatible)
 DROP TABLE IF EXISTS bankcustomers;
 CREATE TABLE IF NOT EXISTS bankcustomers (
   customer_id BIGINT PRIMARY KEY AUTO_INCREMENT,
