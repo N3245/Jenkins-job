@@ -1,0 +1,55 @@
+Normalization:
+Normalization is a database design technique used to eliminate redundancy and maintain data consistency by dividing tables into smaller related tables.
+Stages:
+👉 1NF → Clean columns👉 2NF → Full key dependency👉 3NF → Only key dependency
+------------------
+1NF – Atomic values, no repeating groups --> 2NF – Remove partial dependency -->3NF – Remove transitive dependency -->BCNF – Stronger 3NF
+INDIEX:
+👉 Indexing is a database object used to improve query performance by providing faster data access paths using column values and ROWID pointers.
+Types:B-tree index-/-/-Bitmap index-->Unique index-->Composite index-->Function-based index
+How to Check and Resolve a Slow DB Query (Oracle SQL)
+SELECT sql_id,status,username, elapsed_time,executions,sql_text FROM v$sql ORDER BY elapsed_time DESC; 
+Shows queries consuming maximum time.
+
+Check long running sessions
+SELECT sid, serial#, username, status, sql_id FROM v$session WHERE status='ACTIVE';
+
+Step 2: Check Query Execution Plan
+
+EXPLAIN PLAN FOR
+SELECT * FROM employees WHERE emp_id=101;
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
+Step 3: Check Query Execution Time
+SET TIMING ON;
+SQL query : example SELECT * FROM employees;
+Step 4: Verify Index Usage
+SELECT index_name FROM user_indexes WHERE table_name='EMPLOYEES';
+If execution plan shows TABLE ACCESS FULL, index may be missing.
+
+Step 5: Common Reasons for Slow Queries
+CREATE INDEX emp_idx ON employees(emp_id);
+
+Step 6: Monitor Wait Events
+
+SELECT event, wait_class, seconds_in_wait FROM v$session WHERE state='WAITING';
+Step 7: Check Blocking Sessions (Locks)
+SELECT blocking_session, sid, serial# FROM v$session WHERE blocking_session IS NOT NULL;
+
+Kill blocking session (DBA only):
+ALTER SYSTEM KILL SESSION 'SID,SERIAL#';
+
+
+User complaint
+      ↓
+Identify SQL_ID
+      ↓
+Check execution plan
+      ↓
+Check index usage
+      ↓
+Gather statistics
+      ↓
+Optimize query/index
+      ↓
+Monitor performance
+
