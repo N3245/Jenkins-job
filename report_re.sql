@@ -115,7 +115,7 @@ SELECT
     AVG(t3.amount) AS avg_transaction_amount
     
 FROM bankcustomers t1
-LEFT JOIN qac_table t2 ON t1.customer_id = t2.customer_id
+LEFT JON qac_table t2 ON t1.customer_id = t2.customer_id
 LEFT JOIN transactions_table t3 ON t1.customer_id = t3.customer_id
 
 WHERE t1.is_active = TRUE
