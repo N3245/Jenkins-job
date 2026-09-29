@@ -63,4 +63,9 @@ CREATE TABLE IF NOT EXISTS bankcustomers (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Example select (for testing)
+
+
+
+new line
+
 SELECT * FROM bankcustomers;
